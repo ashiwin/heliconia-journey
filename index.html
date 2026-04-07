@@ -1,81 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="heliconia-journey"
-      content="Heliconia Lifecycle Infographic by Ashiwin Kumar"
-    />
-    <title>Heliconia Lifecycle Infographic by Ashiwin Kumar</title>
-    <style>
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-        background: #eef5ef;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 32px;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="heliconia-journey"
+			content="Heliconia Lifecycle Infographic by Ashiwin Kumar"
+		/>
+		<title>Heliconia Lifecycle Infographic by Ashiwin Kumar</title>
+		<style>
+			*,
+			*::before,
+			*::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-      .infographic-section {
-        width: 100%;
-        max-width: 1440px;
-      }
+			body {
+				font-family:
+					-apple-system, BlinkMacSystemFont, "SF Pro Display",
+					"Helvetica Neue", "Segoe UI", sans-serif;
+				background: #eef5ef;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				padding: 32px;
+			}
 
-      .infographic-wrapper {
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow:
-          0 2px 4px rgba(0, 0, 0, 0.04),
-          0 20px 60px rgba(0, 0, 0, 0.1),
-          0 0 0 1px rgba(11, 26, 16, 0.08);
-      }
+			.infographic-section {
+				width: 100%;
+				max-width: 1440px;
+			}
 
-      heliconia-journey {
-        display: block;
-        width: 100%;
-        aspect-ratio: 1440 / 900;
-      }
+			.infographic-wrapper {
+				border-radius: 20px;
+				overflow: hidden;
+				box-shadow:
+					0 2px 4px rgba(0, 0, 0, 0.04),
+					0 20px 60px rgba(0, 0, 0, 0.1),
+					0 0 0 1px rgba(11, 26, 16, 0.08);
+			}
 
-      @media (max-width: 600px) {
-        body {
-          padding: 0;
-        }
-        .infographic-section {
-          max-width: 100%;
-        }
-        .infographic-wrapper {
-          border-radius: 0;
-          box-shadow: none;
-        }
-        heliconia-journey {
-          aspect-ratio: unset;
-          height: 677px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <section class="infographic-section">
-      <div class="infographic-wrapper">
-        <heliconia-journey></heliconia-journey>
-      </div>
-    </section>
+			heliconia-journey {
+				display: block;
+				width: 100%;
+				aspect-ratio: 1440 / 900;
+			}
 
-    <script src="three.min.js"></script>
-    <script src="gsap.min.js"></script>
-    <script src="heliconia-journey.js" type="module"></script>
-  </body>
+			@media (max-width: 600px) {
+				body {
+					padding: 0;
+				}
+
+				.infographic-section {
+					max-width: 100%;
+				}
+
+				.infographic-wrapper {
+					border-radius: 0;
+					box-shadow: none;
+				}
+
+				heliconia-journey {
+					aspect-ratio: unset;
+					height: 677px;
+				}
+			}
+
+			.infographic-caption {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 6px;
+				padding: 12px 2px 0;
+				font-family:
+					-apple-system, BlinkMacSystemFont, "SF Pro Display",
+					"Helvetica Neue", "Segoe UI", sans-serif;
+				font-size: 0.76rem;
+				color: #4a7060;
+			}
+
+			.caption-src a {
+				color: #00a87a;
+				text-decoration: none;
+			}
+
+			.caption-src a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<section class="infographic-section">
+			<div class="infographic-wrapper">
+				<heliconia-journey></heliconia-journey>
+			</div>
+			<p class="infographic-caption">
+				<span class="caption-src">
+					Sources:
+					<a
+						href="https://heliconia.org"
+						target="_blank"
+						rel="noopener"
+						>Heliconia Society International</a
+					>,
+					<a
+						href="https://en.wikipedia.org/wiki/Heliconia"
+						target="_blank"
+						rel="noopener"
+						>Wikipedia</a
+					></span
+				>
+				<span>Prepared by Ashiwin Kumar</span>
+			</p>
+		</section>
+
+		<script src="three.min.js"></script>
+		<script src="gsap.min.js"></script>
+		<script src="heliconia-journey.js" type="module"></script>
+	</body>
 </html>
