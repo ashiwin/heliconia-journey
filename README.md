@@ -93,12 +93,12 @@ All styles are scoped inside the shadow root and will not leak into or be affect
 
 ### Accessibility
 
-- Keyboard navigation via `ArrowLeft` / `ArrowRight` (and `Up` / `Down`)
-- `aria-live="polite"` on the main content area announces stage changes to screen readers
-- `role="progressbar"` with `aria-valuenow` on the progress indicator
-- `aria-pressed` on sidebar nav buttons; `aria-selected` on dot indicators
-- `aria-expanded` on the Field Note toggle
-- All interactive elements are focusable with visible focus states
+- Keyboard navigation via `ArrowLeft` / `ArrowRight` (and `Up` / `Down`).
+- `aria-live="polite"` on the main content area announces stage changes to screen readers.
+- `role="progressbar"` with `aria-valuenow` on the progress indicator.
+- `aria-pressed` on sidebar nav buttons; `aria-selected` on dot indicators.
+- `aria-expanded` on the Field Note toggle.
+- All interactive elements are focusable with visible focus states.
 
 ## Assumptions & Limitations
 
