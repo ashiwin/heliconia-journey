@@ -518,7 +518,7 @@ function getCSS() {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 3px 10px 3px 3px;
+      padding: 3px 5px;
       background: var(--hj-step-bg);
       border: 1px solid rgba(11,40,22,0.10);
       border-radius: 99px;
@@ -576,6 +576,7 @@ function getCSS() {
       gap: 18px;
       overflow-y: auto;
       scrollbar-width: none;
+      touch-action: pan-x;
     }
 
     .hj-info::-webkit-scrollbar {
@@ -1113,7 +1114,7 @@ function getHTML(steps) {
         <div class="hj-step-content" id="hj-step-content">
           <div class="hj-illustration" id="hj-illustration" aria-hidden="true"></div>
           <div class="hj-step-chip" id="hj-step-chip">
-            <div class="hj-chip-dot" id="hj-chip-dot"></div>
+            <!-- <div class="hj-chip-dot" id="hj-chip-dot"></div> -->
             <span class="hj-chip-label" id="hj-chip-label"></span>
           </div>
           <h2 class="hj-step-title" id="hj-step-title"></h2>
@@ -1401,6 +1402,25 @@ class HeliconiaJourney extends HTMLElement {
 		root.getElementById("hj-fn-toggle").addEventListener("click", (e) =>
 			e.stopPropagation(),
 		);
+
+		// Prevent parent scroll when scrolling the info panel tabs
+		const infoPanel = root.querySelector(".hj-info");
+		infoPanel.addEventListener(
+			"touchstart",
+			(e) => {
+				e.stopPropagation();
+			},
+			{ passive: true },
+		);
+		infoPanel.addEventListener("touchend", (e) => {
+			e.stopPropagation();
+		});
+		this.addEventListener("touchend", (e) => {
+			if (this._touchInInfo) return; // ignore swipes from info panel
+			const dx = e.changedTouches[0].clientX - this._touchX;
+			if (Math.abs(dx) > 50)
+				this._navigate(dx < 0 ? this._step + 1 : this._step - 1);
+		});
 
 		// Mobile tap for tooltip
 		root.getElementById("hj-stats").addEventListener("click", (e) => {

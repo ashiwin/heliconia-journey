@@ -1,6 +1,6 @@
-# Heliconia Journey: Interactive Infographic
+# Heliconia Journey by Ashiwin
 
-An interactive infographic web component exploring the six lifecycle stages of the Heliconia flower family, from tropical origins to seed dispersal. This infographic is built as a standalone embeddable asset.
+An infographic web component built as a standalone embeddable asset, displaying the lifecycle stages of the Heliconia flower family.
 
 ## Running the Project
 
@@ -31,7 +31,7 @@ images/
 # Node.js (if npx is available) (my preferred method)
 npx serve -l 3000
 
-# Python (if you prefer the alternative)
+# Python (if you prefer an alternative to Node.js)
 python3 -m http.server 3000
 ```
 
@@ -71,7 +71,7 @@ A large ghosted step number sits behind the content as a compositional element.
 
 ### Three.js Particle System
 
-- 350 floating particles drift upward and wrap, creating a living background layer.
+- Floating particles drift upward and wrap, creating a living background layer.
 - On each stage transition, a burst effect fires and particles accelerate briefly before settling.
 - Particle colour lerps smoothly toward the active stage's accent colour using `THREE.Color.lerp` each frame.
 - Rendered to a `<canvas>` that sits behind all UI layers with `pointer-events: none`.
@@ -82,23 +82,23 @@ Caters to both desktop, tablet and mobile views.
 
 ### Web Component
 
-The entire infographic is encapsulated as `<heliconia-journey>` using the native Web Components API with Shadow DOM. It can be dropped into any webpage with a single tag:
+The entire infographic is encapsulated as `<heliconia-journey>` using the native Web Components API with Shadow DOM. It can be dropped into any webpage with:
 
 ```html
-<script src="heliconia-journey.js" type="module"></script>
 <heliconia-journey></heliconia-journey>
+<script src="heliconia-journey.js" type="module"></script>
 ```
 
 All styles are scoped inside the shadow root and will not leak into or be affected by the host page's CSS.
 
 ### Accessibility
 
-- Keyboard navigation via `ArrowLeft` / `ArrowRight` (and `Up` / `Down`)
-- `aria-live="polite"` on the main content area announces stage changes to screen readers
-- `role="progressbar"` with `aria-valuenow` on the progress indicator
-- `aria-pressed` on sidebar nav buttons; `aria-selected` on dot indicators
-- `aria-expanded` on the Field Note toggle
-- All interactive elements are focusable with visible focus states
+- Keyboard navigation via `ArrowLeft` / `ArrowRight` (and `Up` / `Down`).
+- `aria-live="polite"` on the main content area announces stage changes to screen readers.
+- `role="progressbar"` with `aria-valuenow` on the progress indicator.
+- `aria-pressed` on sidebar nav buttons; `aria-selected` on dot indicators.
+- `aria-expanded` on the Field Note toggle.
+- All interactive elements are focusable with visible focus states.
 
 ## Assumptions & Limitations
 
@@ -110,9 +110,6 @@ This is to allow offline use. The files must be present relative to `index.html`
 
 **No build tooling**\
 The project is intentionally vanilla. There is no bundler, no TypeScript, and no npm dependencies. This keeps the source portable and the file structure transparent.
-
-**The tablet breakpoint shares the same layout rules as mobile**\
-Both trigger at `max-width: 1024px`. This is intentional as the 3-column desktop layout does not compress well between 768px and 1024px.
 
 **The infographic is designed for modern evergreen browsers.**\
 No polyfills are included for Web Components or CSS custom properties.

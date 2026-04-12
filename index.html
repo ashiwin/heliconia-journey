@@ -69,6 +69,27 @@
 				}
 			}
 
+			@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
+				body {
+					padding: 16px;
+					align-items: flex-start;
+				}
+				heliconia-journey {
+					aspect-ratio: unset;
+					height: calc(100svh - 64px);
+				}
+			}
+
+			@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
+				body {
+					padding: 12px;
+				}
+				heliconia-journey {
+					aspect-ratio: unset;
+					height: calc(100svh - 24px);
+				}
+			}
+
 			.infographic-caption {
 				display: flex;
 				justify-content: space-between;
